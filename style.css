@@ -1,0 +1,349 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+
+:root {
+  --color-1: #057597;
+  --color-2: #cc559b;
+  --color-3: #03582e;
+  --color-4: #23d5ab;
+  --color-5: #e91296;
+  --text: #faf5e9;
+  --white: #fff;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  overflow-x: hidden;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+body {
+  background: linear-gradient(
+    90deg,
+    var(--color-1),
+    var(--color-2),
+    var(--color-3),
+    var(--color-4),
+    var(--color-5)
+  );
+  background-size: 300% 300%;
+  animation: color 6s ease-in-out infinite;
+  color: var(--text);
+  height: 100vh;
+}
+.container {
+  max-width: 700px;
+  max-height: 60vh;
+  margin: 0 auto;
+  padding: 10px;
+}
+#timer {
+  text-align: right;
+  font-weight: bold;
+}
+#timer span {
+  color: #000;
+}
+#question {
+  background-color: rgb(248, 251, 253);
+  margin-bottom: 10px;
+  border-radius: 7px;
+  padding: 34px 30px;
+  color: #000;
+}
+#question h2 {
+  color: #000;
+  font-weight: normal;
+  padding: 16px;
+}
+#options {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+.btn {
+  height: 9vh;
+  border-radius: 7px;
+  border: none;
+}
+.btn:hover:not([disabled]) {
+  background-color: #057597;
+}
+#quiz-container button {
+  cursor: pointer;
+}
+.logo {
+  display: flex;
+  width: 5rem;
+  height: 11vh;
+  margin: 2rem;
+  border-radius: 50%;
+}
+.logo img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+.disabled {
+  pointer-events: none;
+}
+.btn.correct {
+  background-color: #23d5ab;
+}
+.btn.wrong {
+  background-color: #d52323;
+}
+.correct {
+  background-color: #cc559b;
+}
+.incorrect {
+  background-color: #cc559b;
+}
+#next-button {
+  background-color: #012a36;
+  color: #fff;
+  border: none;
+  width: 18%;
+  height: 6vh;
+  margin-top: 2rem;
+  text-align: center;
+  border-radius: 5px;
+}
+#prev-button {
+  background-color: #a0abb1;
+  color: #fff;
+  border: none;
+  width: 18%;
+  height: 6vh;
+  margin-top: 2rem;
+  text-align: center;
+  border-radius: 5px;
+  margin-right: 1rem;
+}
+#course-selection h3 {
+  font-weight: normal;
+  font-size: 1rem;
+}
+
+select {
+  color: var(--color-1);
+  border: none;
+  outline: none;
+  appearance: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  width: 10rem;
+  cursor: pointer;
+  padding: 0.7rem;
+  font-weight: 600;
+  border-radius: 6px;
+  margin-bottom: 1rem;
+}
+
+select option {
+  font-weight: 600;
+  border-radius: none;
+}
+.course-select {
+  margin: 1rem;
+  position: relative;
+  overflow: hidden;
+  font-weight: 600;
+}
+
+.course-select::after {
+  content: "\25bc";
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 1rem;
+  color: var(--color-2);
+  pointer-events: none;
+  transition: all 0.3s ease;
+}
+
+/* header {
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.todo-image {
+  width: 50px;
+  height: 55px;
+}
+.todo-image img {
+  max-width: 100%;
+}
+header,
+form {
+  min-height: 20vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  outline: none;
+}
+
+form input {
+  border-radius: 10px 0 0 10px;
+}
+form input,
+form button {
+  padding: 0.5rem;
+  font-size: 2rem;
+  border: none;
+  background-color: var(--white);
+  outline: none;
+}
+form button {
+  color: var(--white);
+  background: var(--color-2);
+  cursor: pointer;
+  border-radius: 0 10px 10px 0;
+  transition: all 0.3s ease-in-out;
+}
+form button:hover {
+  background: blue;
+  color: #fff;
+}
+
+@keyframes color {
+  0% {
+    background-position: 0 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0 50%;
+  }
+}
+.todo-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.todo-list {
+  min-width: 30%;
+  list-style: none;
+}
+
+.todo {
+  margin: 0.5rem;
+  background-color: #fff;
+  color: black;
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: all 0.5s ease;
+  border-radius: 10px 10px 10px 10px;
+}
+.todo-item {
+  flex: 1;
+  padding: 0rem 0.5rem;
+}
+.complete-btn,
+.delete-btn {
+  padding: 1rem;
+  border: none;
+  font-size: 1rem;
+  color: #fff;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+.complete-btn {
+  background: #5ada3b;
+}
+
+.complete-btn:hover {
+  background: #057597;
+}
+
+.delete-btn {
+  border-radius: 0 10px 10px 0;
+  background: var(--color-2);
+}
+
+.delete-btn:hover {
+  background: #a70202;
+}
+
+.fa-trash,
+.fa-check {
+  pointer-events: none;
+}
+
+.fall {
+  opacity: 0;
+  animation: fall-animation 1s ease-in-out forwards;
+}
+
+@keyframes fall-animation {
+  0% {
+    opacity: 0.8;
+    transform: translateY(0);
+  }
+  20% {
+    transform: translateY(-5px);
+  }
+  40% {
+    transform: translateY(0px);
+  }
+  60% {
+    transform: translateY(-5px);
+  }
+  80% {
+    transform: translateY(0px);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+}
+
+.completed {
+  text-decoration: line-through;
+  opacity: 0.5;
+}
+
+#course-select {
+  color: var(--color-2);
+  border: none;
+  outline: none;
+  appearance: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  width: 10rem;
+  cursor: pointer;
+  padding: 1.1rem;
+  font-weight: 600;
+  border-radius: 10px;
+}
+
+select option {
+  font-weight: 600;
+  border-radius: none;
+}
+#course-select {
+  margin: 1rem;
+  position: relative;
+  overflow: hidden;
+  font-weight: 600;
+}
+
+#course-select::after {
+  content: "\25bc";
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 1rem;
+  color: var(--color-2);
+  pointer-events: none;
+  transition: all 0.3s ease;
+} */
