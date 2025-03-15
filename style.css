@@ -22,14 +22,7 @@ body {
   font-family: "Poppins", sans-serif;
 }
 body {
-  background: linear-gradient(
-    90deg,
-    var(--color-1),
-    var(--color-2),
-    var(--color-3),
-    var(--color-4),
-    var(--color-5)
-  );
+  background: linear-gradient(46deg, black, white);
   background-size: 300% 300%;
   animation: color 6s ease-in-out infinite;
   color: var(--text);
@@ -40,6 +33,7 @@ body {
   max-height: 60vh;
   margin: 0 auto;
   padding: 10px;
+  margin-top: 6rem;
 }
 #timer {
   text-align: right;
